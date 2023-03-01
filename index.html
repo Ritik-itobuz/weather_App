@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+    
+    
+</head>
+<script>
+async function getweatherdata()
+{
+    const res = await fetch("http://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=kolkata&aqi=no").then(
+    (res) => res.json()
+    );
+    console.log(res.location.name);
+    document.getElementById('city').innerHTML=res.location.name;
+    console.log(res.current.temp_f);
+    console.log(res.current.feelslike_f);
+    console.log(res.current.cloud);
+}
+
+
+</script>
+<body>
+    <button onclick="return getweatherdata()">Get Weather</button>
+   <div class="container">
+    <p class="city">london </p>
+    <div class="data">
+<h1>32!</h1>
+
+
+    </div>
+    <div class = "data">Feels 69!</div>
+   </div> -->
+</body>
+</html>
